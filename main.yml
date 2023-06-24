@@ -14,15 +14,15 @@
 
   roles:
     - role: elliotweiser.osx-command-line-tools
-    - role: geerlingguy.mac.homebrew
+    - role: nugrahaga.mac.homebrew
       tags: ['homebrew']
-    - role: geerlingguy.dotfiles
+    - role: nugrahaga.dotfiles
       when: configure_dotfiles
       tags: ['dotfiles']
-    - role: geerlingguy.mac.mas
+    - role: nugrahaga.mac.mas
       when: mas_installed_apps or mas_installed_app_ids
       tags: ['mas']
-    - role: geerlingguy.mac.dock
+    - role: nugrahaga.mac.dock
       when: configure_dock
       tags: ['dock']
 
@@ -31,13 +31,16 @@
       when: configure_sudoers
       tags: ['sudoers']
 
-    - import_tasks: tasks/terminal.yml
-      when: configure_terminal
-      tags: ['terminal']
+    # - import_tasks: tasks/terminal.yml
+    #   when: configure_terminal
+    #   tags: ['terminal']
 
     - import_tasks: tasks/osx.yml
       when: configure_osx
       tags: ['osx']
+
+    -import_tasks: tasks/mvn.yml
+      tags: ['mvn']
 
     - import_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
