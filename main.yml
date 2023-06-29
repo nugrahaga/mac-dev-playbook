@@ -41,7 +41,7 @@
       when: configure_osx
       tags: ['osx']
 
-    -import_tasks: tasks/mvn.yml
+    - import_tasks: tasks/mvn.yml
       tags: ['mvn']
 
     - import_tasks: tasks/extra-packages.yml
