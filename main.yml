@@ -25,6 +25,8 @@
     - role: nugrahaga.mac.dock
       when: configure_dock
       tags: ['dock']
+    - role: nugrahaga.mac.p10k
+      tags: ['p10k']
 
   tasks:
     - import_tasks: tasks/sudoers.yml
